@@ -14,9 +14,9 @@
                  <h1>Gustavo Figueiredo</h1>
             </div>
             <div class="menu-links">
-                <a href="#">Início da bagaceira</a>
-                <a href="#habilitys">Sobre</a>
-                <a href="#projectId">Projetos</a>
+                <a href="#">Home</a>
+                <a href="#habilitys">About</a>
+                <a href="#projectId">Projects</a>
             </div>
         </nav>
     </header>
@@ -25,10 +25,13 @@
             <section class="apresentation main-content">
                 <div>
                     <div class="description">
-                        <p>Eu sou</p>
+                        <p>I am</p>
                         <p><span> Gustavo Figueiredo</span></p>
-                        <p class="otherC">Cursando Engenharia da computação, atualmente estudando Machine Learning com Tensorflow, Keras e Pytorch </p>
-                        <div class="btn"><a href="#" class="button">Meu Portfólio</a></div>
+                        <p class="otherC">I'm a Computer Engineer, graduated on 2025, currently pursuing a 
+                            Master's Degree on Augmented Reality. I have 3 years experience on Computer Vision, working on a daily 
+                            basis with training, customizing and deploying Deep Learning models, as well as with Digital Image
+                            Processing techniques.
+                        </p>
                     </div>
                 </div>
                 <div class="self-content">
@@ -36,55 +39,156 @@
                 </div>
             </section>
         </section>
+        <section class="section-project" id="projectId">
+            <div class="main-content projects">
+                <div>
+                    <h2 id="project-title">Projects</h2>
+                </div>
+                <div class="section-cards">
+                    <div class="project-card-a" onclick="openModal('modal1')">
+                        <div class="project-card">
+                            <div><img src="image/project1.jpeg" alt="Content Layout Detection on Magazines"></div>
+                            <h3>Content Layout Detection on Magazines</h3>
+                            <div><p>The project was to detect each class (defined by us) on a magazine, 
+                                then run a OCR on each specific box for each class and create a structured JSON containing 
+                                every information across the entire magazine...</p></div>
+                            </div>
+                    </div>
+                    <div class="project-card-a" onclick="openModal('modal2')">
+                        <div class="project-card">
+                            <div><img src="image/project2.jpeg" alt="Tracking of tiny animals from thermal images"></div>
+                            <div>
+                                <h3>Tracking of tiny animals from thermal images collected by drone</h3>
+                                <p>In this project I had to use a detection model (many models tested -RTMDet, FasterRCNN, RetinaNET, SSD - but the best case on the performance x processing time was YOLOm) but the main issue wasn't detecting the animals...</p></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal for Project 1 -->
+        <div id="modal1" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-header">
+                    <h2>Content Layout Detection on Magazines</h2>
+                    <div class="project-date">Completed: June 2023</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section">
+                        <h3>Summary</h3>
+                        <p>The project was to detect each class (defined by us) on a magazine, then run a OCR on each specific box for each class and create a structured JSON containing every information across the entire magazine. It was a whole project through data annotation to delivery a Docker file, with both a web interface and a CLI API.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Skills Developed</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Object Detection</span>
+                            <span class="skill-tag">OCR</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Web Interface Development</span>
+                            <span class="skill-tag">CLI API</span>
+                            <span class="skill-tag">Data Annotation</span>
+                        </div>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Main Challenges</h3>
+                        <p>The main challenge with this project was determining when a article started and ended, we had to make several adjustments using digital image processing. Additionally, handling the variability in magazine layouts and ensuring accurate text extraction from different content types presented significant technical hurdles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Project 2 -->
+        <div id="modal2" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+                <div class="modal-header">
+                    <h2>Tracking of tiny animals from thermal images collected by drone</h2>
+                    <div class="project-date">Completed: March 2024</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section">
+                        <h3>Summary</h3>
+                        <p>In this project I had to use a detection model (many models tested -RTMDet, FasterRCNN, RetinaNET, SSD - but the best case on the performance x processing time was YOLOm) but the main issue wasn't detecting the animals, for the project I had to count them, so I had to implement a tracker class, that would identify (i.e give an ID) each of the bbox returned from the model and count the number of IDs at the end.</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Skills Developed</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Object Detection</span>
+                            <span class="skill-tag">Object Tracking</span>
+                            <span class="skill-tag">Model Training</span>
+                            <span class="skill-tag">YOLO</span>
+                            <span class="skill-tag">RTMDet</span>
+                            <span class="skill-tag">Digital Image Processing</span>
+                            <span class="skill-tag">Custom Dataset Creation</span>
+                        </div>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Main Challenges</h3>
+                        <p>The main challenges included:
+                            <ul>
+                                <li>Training multiple models on our custom dataset</li>
+                                <li>Using the model to extract bounding boxes</li>
+                                <li>Identifying those bounding boxes using digital image processing techniques</li>
+                                <li>Implementing a robust tracking algorithm that could handle occlusions and similar-looking animals</li>
+                                <li>Ensuring accurate counting despite environmental factors in thermal imagery</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <section class="hability-container" id="habilitys">
             <div class="habilitySection">
                 <div class="habilityDescription">
-                    <h2 id="h2-hability">Minhas Habilidades</h2>
-                    <p class="otherP">Esses são alguns exemplos de habilidades que desenvolvi em minha carreira escolar e profissional.</p>
+                    <h2 id="h2-hability">Skills</h2>
+                    <p class="otherP"></p>
                 </div>
                 <div class="hability main-content">
                     <div class="habilityBox">
                         <div class="habilityContent">
-                            <h3>Machine Learning</h3>
+                            <h3>Computer Vision</h3>
                             <div>
-                                <p class="titleHability">Tensorflow</p>
+                                <p class="titleHability">Object Tracking</p>
                                 <div class="back-line">
                                     <div class="line"></div>
                                 </div>
                             </div>
                             <div>
-                                <p class="titleHability">Pytorch</p>
+                                <p class="titleHability">Augmented Reality</p>
                                 <div class="back-line">
                                     <div class="line2"></div>
                                 </div>
                             </div>
                             <div>
-                                <p class="titleHability">Keras</p>
+                                <p class="titleHability">Semantic Segmentation</p>
                                 <div class="back-line">
-                                    <div class="line"></div>
+                                    <div class="line2"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="habilityBox">
                         <div class="habilityContent">
-                            <h3>Data Science</h3>
+                            <h3>Deep Learning</h3>
                             <div>
-                                <p class="titleHability">Numpy</p>
+                                <p class="titleHability">Customizing Models</p>
                                 <div class="back-line">
                                     <div class="line"></div>
                                 </div>
                             </div>
                             <div>
-                                <p class="titleHability">Pandas</p>
-                                <div class="back-line">
-                                    <div class="line"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="titleHability">SQL</p>
+                                <p class="titleHability">Deploying</p>
                                 <div class="back-line">
                                     <div class="line2"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="titleHability">Frameworks</p>
+                                <div class="back-line">
+                                    <div class="line"></div>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +205,13 @@
                             <div>
                                 <p class="titleHability">Docker</p>
                                 <div class="back-line">
-                                    <div class="line3"></div>
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="titleHability">Google Cloud</p>
+                                <div class="back-line">
+                                    <div class="line2"></div>
                                 </div>
                             </div>
                         </div>
@@ -109,37 +219,46 @@
                 </div>
             </div>
         </section>
-        <section class="section-project" id="projectId">
-            <div class="main-content projects">
-                <div>
-                    <h2 id="project-title">Projetos</h2>
-                </div>
-                <div class="section-cards">
-                    <a href="https://gustaftw-food101-streamlit-app-7qmiw7.streamlit.app/" class="project-card-a" id="card1">
-                        <div class="project-card">
-                            <div><img src="image/project1.jpeg" alt=""></div>
-                            <h3>Projeto 1: Food101</h3>
-                            <div><p>Esse foi o meu primeiro projeto de Visão Computacional com Deep Learning, é um modelo AI com fine-tuning usando o modelo pré-treinado EfficientNetB0, adquiriu 75% de precisão sobre 101 tipos de pratos!</p></div>
-                        </div>
-                    </a>
-                    <a href="https://gustaftw-cancerrecognition-streamlitappstreamlit-wqau6h.streamlit.app/" class="project-card-a">
-                        <div class="project-card">
-                            <div><img src="image/project2.jpeg" alt=""></div>
-                            <div>
-                                <h3>Projeto 2: Cancer Recognition</h3>
-                                <p>Esse foi o meu segundo projeto de Visão Computacional com Deep Learning, é um modelo AI com fine-tuning usando o EfficientNetB5, conseguiu 97% de precisão em 15 diferentes tipos de câncer em exames RMI</p></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="btn-projects">
-                    <a href="#" class="button" id="btn-port">Portfólio</a>
-                </div>
-            </div>
-        </section>
         <footer>
             <div><p>Gustavo Figueiredo</p></div>
-            <div><p>Site desenvolvido por <a href="https://gabriel-marchese.github.io/projeto-portifolio/" target="_blank">Gabriel Marchese</a></p></div>
+            <div><p>Made by <a href="https://gabriel-marchese.github.io/projeto-portifolio/" target="_blank">Gabriel Marchese</a></p></div>
         </footer>
     </main>
+    
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of modal content
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal-overlay');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target === modals[i]) {
+                    modals[i].style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.getElementsByClassName('modal-overlay');
+                for (let i = 0; i < modals.length; i++) {
+                    if (modals[i].style.display === 'flex') {
+                        modals[i].style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
